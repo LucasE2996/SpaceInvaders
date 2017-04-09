@@ -4,16 +4,31 @@
 	<title>Scpace Invaders test</title>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<style media="screen">
+		#press-txt {
+			position: fixed;
+    	top: 50%;
+	    left: 50%;
+			margin-left: -200px;
+			margin-top: -30px;
+			font-size:50px;
+			color:white;
+			z-index: 1;
+			background: none;
+		}
+	</style>
 </head>
 <body>
 
-	<img id="backGround" width="100%" height="100%" src="../imagens/bgGame02.png">
-	<img id="drawHero" src="../imagens/player.png" hidden>
-	<img id="drawEnemy" src="../imagens/enemy.png" hidden>
+	<img id="backGround" width="100%" height="100%" src="imagens/bgGame02.png" hidden>
+	<img id="drawHero" src="imagens/player.png" hidden>
+	<img id="drawEnemy" src="imagens/enemy.png" hidden>
 
-	<canvas id="canvas"></canvas>
+	<h5 id="press-txt"> PRESS ENTER </h5>
 
-	
+	<canvas id="canvas" style="z-index:0"></canvas>
+
+
 	<script src="JS/personagem.js"></script>
 	<script src="JS/shot.js"></script>
 	<script src="JS/enemy.js"></script>

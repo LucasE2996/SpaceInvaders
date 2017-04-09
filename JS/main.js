@@ -1,6 +1,6 @@
 /* ========================================================
 	function : main()
-	Author: Jake the Dog and Finn the Human
+	Author: Lucas Rosa
 	description: instance "personagem()", and calls it self with "main()"
 =========================================================== */
 
@@ -49,7 +49,7 @@ function main() {
 	ctx = canvas.getContext("2d"); //contexto da canvas sera em 2d
 	document.body.appendChild(canvas); //atribui a canvas ao corpo
 	canvas.style.border = "1px solid #000";
-	
+
 	run();//chama a função run()
 
 }
@@ -57,13 +57,16 @@ function main() {
 function run() {
 	draw();//chama a  função draw()
 	update();//chama a função update()
-	
+
 	setTimeout(run, 1000/60); //a função run() se repetirá à uma taxa de 60 FPS
 }
 
 function update() {
-	if(keys.enter in teclas)
+
+	if(keys.enter in teclas){
 			this.playing = true;
+			document.getElementById("press-txt").style.display = "none";
+	}
 	if(playing){
 		hero.move();//chama a movimentação do personagem
 		nave.update();
@@ -75,12 +78,12 @@ function draw() {
 
 	var bg = document.getElementById("backGround");
 	ctx.drawImage(bg,0,0,900,600);
-	
-	
+
+
 	nave.draw();
 	hero.draw(); //desenha o personagem
 	shot.draw(); //desenha o tiro
-	
+
 }
 
 main(); //chama a função principal (executa o jogo)
